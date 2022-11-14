@@ -4,7 +4,7 @@ It handles the removal of this one call to `DirectBuffer.cleaner()` as well as a
 that were previously part of JVM.
 
 ### JVM 8
-To make starsecotr work with JVM 8 you need to add those JVM parameters to the launch script:
+To make starsector work with JVM 8 you need to add those JVM parameters to the launch script:
 ```
 -XX:+UnlockDiagnosticVMOptions
 -XX:-BytecodeVerificationRemote
