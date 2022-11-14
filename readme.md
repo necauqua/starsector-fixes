@@ -22,8 +22,9 @@ Well changing one import can be done with a shim without having to edit more byt
 
 Both of those steps are handled by the javaagent that I wrote and you are reading the readme of.
 
-First, compile it with `./gradlew build` and then add `-javaagent:path-to-resulting-jar.jar` to the
-JVM parameters in the launch script. The jar is `build/libs/starsector-fixes.jar` after running the build.
+First, compile it with `./gradlew build` (or grab the jar from the github releases page) and then
+add `-javaagent:path-to-resulting-jar.jar` to the JVM parameters in the launch script.
+The jar will be `build/libs/starsector-fixes.jar` when you build it.
 
 ### JVM 17
 And lastly for JVM 17 you also need to add a few `--add-opens` parameters to the launch script, listed below:
