@@ -57,12 +57,12 @@ And lastly for JVM 17 you also need to add a few `--add-opens` parameters to the
 
 It has nothing to do with starsector-fixes,
 see [this](https://stackoverflow.com/questions/55847497/how-do-i-troubleshoot-inconsistency-detected-dl-lookup-c-111-java-result-12)
-.
+(tl;dr: try using AdoptOpenJDK instead of what you were using).
 
 - When opening the intel view by pressing E the game crashes with `Comparison method violates its general contract`.
-  Well, you can try adding the `-Djava.util.Arrays.useLegacyMergeSort=true` parameter and for some people it somehow
-  fixes it,
-  but the game already does literally that, but in code - so this shouldn't actually happen ¯\_(ツ)_/¯
+
+Well, you can try adding the `-Djava.util.Arrays.useLegacyMergeSort=true` parameter and for some people it somehow
+fixes it, but the game already does literally that, but in code - so this shouldn't actually happen ¯\\\_(ツ)_/¯
 
 ## License
 
