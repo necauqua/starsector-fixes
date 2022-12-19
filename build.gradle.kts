@@ -4,6 +4,8 @@ plugins {
     java
 }
 
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(11))
+
 val shim by sourceSets.creating
 val packaged by configurations.creating
 

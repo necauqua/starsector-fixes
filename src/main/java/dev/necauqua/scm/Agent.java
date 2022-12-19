@@ -124,6 +124,6 @@ public final class Agent implements ClassFileTransformer {
     }
 
     private static void log(Object message) {
-        System.out.println("[STARSECTOR-PATCHER] " + message);
+        System.out.println("[STARSECTOR-FIXES] " + message);
     }
 }
