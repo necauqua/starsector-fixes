@@ -42,6 +42,7 @@ And lastly for JVM 17 you also need to add a few `--add-opens` parameters to the
 --add-opens=java.base/java.text=ALL-UNNAMED
 --add-opens=java.desktop/java.awt.font=ALL-UNNAMED
 --add-opens=java.base/sun.nio.ch=ALL-UNNAMED
+--add-opens java.base/java.lang.ref=ALL-UNNAMED
 ```
 
 ## Issues
