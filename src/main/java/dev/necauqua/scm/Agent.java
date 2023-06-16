@@ -33,55 +33,11 @@ public final class Agent implements ClassFileTransformer {
                     return mv;
                 }
 
-                log("Patched that one method containing the DirectBuffer.cleaner");
-
-//                if (param1 != `float`){
-//                    oO0000.warn(String.format("Buffer for texture %s can not be destroyed", new Object[]{paramString}));
-//                }
-
-                mv.visitVarInsn(ALOAD, 0);
-                mv.visitFieldInsn(
-                    GETSTATIC,
-                    className,
-                    "float",
-                    "Ljava/nio/ByteBuffer;"
-                );
-                var skip = new Label();
-                mv.visitJumpInsn(IF_ACMPNE, skip);
-                mv.visitInsn(RETURN);
-                mv.visitLabel(skip);
-                mv.visitFieldInsn(
-                    GETSTATIC,
-                    className,
-                    "oO0000",
-                    "Lorg/apache/log4j/Logger;"
-                );
-                mv.visitLdcInsn("Buffer for texture %s can not be destroyed");
-                mv.visitInsn(ICONST_1);
-                mv.visitTypeInsn(ANEWARRAY, "java/lang/Object");
-                mv.visitInsn(DUP);
-                mv.visitInsn(ICONST_0);
-                mv.visitVarInsn(ALOAD, 1);
-                mv.visitInsn(AASTORE);
-
-                mv.visitMethodInsn(
-                    INVOKESTATIC,
-                    "java/lang/String",
-                    "format",
-                    "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
-                    false
-                );
-                mv.visitMethodInsn(
-                    INVOKEVIRTUAL,
-                    "org/apache/log4j/Logger",
-                    "warn",
-                    "(Ljava/lang/Object;)V",
-                    false
-                );
-
                 mv.visitInsn(RETURN);
                 mv.visitMaxs(0, 0); // will be computed
                 mv.visitEnd();
+
+                log("Patched that one method containing the DirectBuffer.cleaner");
 
                 return null;
             }
